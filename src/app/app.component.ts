@@ -5,6 +5,17 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 
 import { TabsPage } from '../pages/tabs/tabs';
 
+import * as firebase from 'firebase';
+
+const  firebaseConfig = {
+  apiKey: "AIzaSyAtrmcRZZ7AXTEdnsLcEOc82kDafduZaVk",
+  authDomain: "admoney-v1.firebaseapp.com",
+  databaseURL: "https://admoney-v1.firebaseio.com",
+  projectId: "admoney-v1",
+  storageBucket: "",
+  messagingSenderId: "97878924701"
+};
+
 @Component({
   templateUrl: 'app.html'
 })
@@ -18,5 +29,6 @@ export class MyApp {
       statusBar.styleDefault();
       splashScreen.hide();
     });
+    firebase.initializeApp(firebaseConfig);
   }
 }
